@@ -1,0 +1,72 @@
+{
+  "instagram": {
+    "authentication": {
+      "cookies": {
+        "sessionid": "YOUR_SESSIONID_HERE",
+        "csrftoken": "YOUR_CSRFTOKEN_HERE",
+        "ds_user_id": "YOUR_DS_USER_ID_HERE",
+        "rur": "YOUR_RUR_HERE"
+      },
+      "headers": {
+        "X-CSRFToken": "YOUR_X_CSRF_TOKEN_HERE",
+        "X-IG-App-ID": "YOUR_X_IG_APP_ID_HERE",
+        "X-IG-WWW-Claim": "YOUR_X_IG_WWW_CLAIM_HERE",
+        "X-ASBD-ID": "YOUR_X_ASBD_ID_HERE",
+        "Referer": "https://www.instagram.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      }
+    },
+    "endpoints": {
+      "post_by_shortcode": {
+        "type": "graphql",
+        "method": "POST",
+        "url": "https://www.instagram.com/api/graphql",
+        "doc_id": "YOUR_DOC_ID_HERE",
+        "variables": {
+          "shortcode": "{shortcode}"
+        }
+      },
+      "comments": {
+        "type": "graphql",
+        "method": "POST",
+        "url": "https://www.instagram.com/api/graphql",
+        "doc_id": "YOUR_DOC_ID_HERE",
+        "variables": {
+          "shortcode": "{shortcode}",
+          "first": 50,
+          "after": "{cursor}"
+        }
+      },
+      "comment_replies": {
+        "type": "graphql",
+        "method": "POST",
+        "url": "https://www.instagram.com/api/graphql",
+        "doc_id": "YOUR_DOC_ID_HERE",
+        "variables": {
+          "comment_id": "{comment_id}",
+          "first": 50,
+          "after": "{cursor}"
+        }
+      }
+    },
+    "settings": {
+      "requests_per_minute": 8,
+      "retry_attempts": 3,
+      "retry_delay": 5,
+      "timeout": 30,
+      "max_comments": 400,
+      "fetch_replies": true,
+      "resume_by_default": true,
+      "comments_first": 20,
+      "replies_first": 20,
+      "request_jitter_ratio": 0.2,
+      "save_raw_responses": "errors",
+      "raw_responses_keep": 200,
+      "raw_responses_max_mb": 100
+    },
+    "proxy": {
+      "http": null,
+      "https": null
+    }
+  }
+}
