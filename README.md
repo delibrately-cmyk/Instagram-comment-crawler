@@ -1,5 +1,7 @@
 # Instagram Comment Crawler (Single Post)
 
+[English README](README.md) | [中文说明](README_CN.md)
+
 Fetch comments and replies from one public Instagram post using a logged-in browser session captured via Playwright.
 
 ## What This Tool Can Do
