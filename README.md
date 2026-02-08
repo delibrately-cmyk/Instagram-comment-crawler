@@ -160,6 +160,33 @@ Main output JSON includes:
 - `comments`: top-level comments with nested `replies`
 - `comment_count`, `expected_comment_count`, `fetched_at`, `pages`
 
+### Example Output
+
+```json
+{
+  "post": {
+    "media_id": "3822619...",
+    "url": "https://www.instagram.com/p/POST_SHORTCODE/",
+    "shortcode": "POST_SHORTCODE"
+  },
+  "comment_count": 3927,
+  "comments": [
+    {
+      "id": "1825540...",
+      "text": "🔥🔥🔥🔥",
+      "created_at": "2026-02-01T02:26:48Z",
+      "like_count": 130,
+      "user": {
+        "id": "46481...",
+        "username": "example_user",
+        "is_verified": true
+      },
+      "replies": []
+    }
+  ]
+}
+```
+
 ## Performance Tuning
 
 Tune these keys in `config.json`:

@@ -132,6 +132,33 @@ python -m pytest -q
 - `comments`: 评论列表（包含嵌套的 `replies`）
 - 统计信息：总数、抓取时间、页数
 
+### 输出示例 (Output Structure)
+
+```json
+{
+  "post": {
+    "media_id": "3822619...",
+    "url": "https://www.instagram.com/p/POST_SHORTCODE/",
+    "shortcode": "POST_SHORTCODE"
+  },
+  "comment_count": 3927,
+  "comments": [
+    {
+      "id": "1825540...",
+      "text": "🔥🔥🔥🔥",
+      "created_at": "2026-02-01T02:26:48Z",
+      "like_count": 130,
+      "user": {
+        "id": "46481...",
+        "username": "example_user",
+        "is_verified": true
+      },
+      "replies": []
+    }
+  ]
+}
+```
+
 ## 🔧 常见问题 (Troubleshooting)
 
 - **403 / 429 错误（Rate Limit）**：请求过于频繁。请尝试降低 `config.json` 中的 `requests_per_minute`，或重新运行步骤 5 更新 Cookie。
